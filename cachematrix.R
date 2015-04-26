@@ -5,31 +5,29 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         
-        ## 1. set the value of the matrix
+        ## 1. set the value of the matrix function
         
-        m <- NULL
+        inv <- NULL
         set <- function(y) {
                 x <<- y
-                m <<- NULL
+                inv <<- NULL
         }
         
-        ## 2. get the value of the matrix
+        ## 2. get the value of the matrix function
 
         get <- function() x
         
-        ## 3. set the value of the inverse
+        ## 3. set the value of the inverse function
         
-        setmatrix <- function(mean) m <<- mean
+        setinvm <- function(inverse) inv <<- inverse
         
-        ## 4. get the value of the inverse
+        ## 4. get the value of the inverse function
         
-        getmatrix <- function() m
+        getinvm <- function() inv
         
-        ## 5. turn into list
+        ## 5. make matrix into list to be able to process further with cacheSolve
         
-        list(set = set, get = get,
-             setmean = setmean,
-             getmean = getmean)
+        list(set = set, get = get, setinvm = setinvm, getinvm = getinvm)
         
 }
 
